@@ -3,7 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    
     "multilang": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": { "ar-EG": "src/locale/messages.ar.xlf" }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,18 +23,14 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/multilang",
+            "localize": ["ar-EG"],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -91,13 +92,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
